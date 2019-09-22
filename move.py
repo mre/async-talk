@@ -3,8 +3,8 @@ import time
 boxes = 100 * [None]
 BATCH_SIZE = 100
 
-PACK_TIME = 0.02
-TRANSPORT_TIME = 0.5
+PACK_TIME = 0.001
+TRANSPORT_TIME = 0.3
 
 
 def pack(boxes):
@@ -29,11 +29,15 @@ def batches(items, size):
         yield items[i : i + size]
 
 
+def move(batch):
+    pack(batch)
+    transport(batch)
+    unpack(batch)
+
+
 def main():
     for batch in batches(boxes, 10):
-        batch = pack(boxes)
-        transport(batch)
-        unpack(batch)
+        move(batch)
 
 
 main()

@@ -3,8 +3,8 @@ import asyncio
 boxes = 100 * [None]
 BATCH_SIZE = 100
 
-PACK_TIME = 0.02
-TRANSPORT_TIME = 0.5
+PACK_TIME = 0.001
+TRANSPORT_TIME = 0.3
 
 
 async def pack(boxes):
