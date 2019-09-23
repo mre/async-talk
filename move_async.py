@@ -34,8 +34,7 @@ async def move(batch):
 
 
 async def main():
-    for batch in batches(boxes, 10):
-        await asyncio.gather(move(batch))
-
+    all_batches = [move(batch) for batch in batches(boxes, 10)]
+    await asyncio.gather(*all_batches)
 
 asyncio.run(main())
