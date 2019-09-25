@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+      html {
+        font-family: sans-serif;
+        line-height: 1.4;
+      }
+      
+      img {
+        float: left;
+        margin: 0 10px 10px 0;
+      }
+      
+      button {
+        font-size: 50px;
+        font-family: courier;
+        padding: 0.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="cat.gif">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id convallis sapien. Mauris aliquam urna eu libero tristique mollis. Curabitur a tempus eros. Nam dignissim in enim et bibendum. Ut ut est et ipsum viverra ultrices in dapibus nunc. Vestibulum facilisis lacus eget blandit convallis. Integer tempus a augue ullamcorper condimentum. Vestibulum eu purus est. Nam sodales ante vel arcu suscipit consectetur. Donec a lacus vulputate, tempus sapien quis, interdum sapien. Curabitur vitae enim ac elit lobortis luctus quis sed ante. Donec quis augue ut nisl elementum tincidunt.
+    </p>
+    <button>
+      setTimeout loop
+    </button>
+    
+    
+    <script>
+      document.querySelector('button').addEventListener('click', () => {
+        function loop() {
+          setTimeout(loop, 0);
+        }
+        loop();
+      });
+    </script>
+  </body>
+</html>

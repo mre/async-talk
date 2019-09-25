@@ -1,0 +1,79 @@
+Moving example
+    We still have boxes from our last move
+    truck is not there.
+    "blocked"
+async = concurrent
+    two "tasks" occurring at the same time
+    happen _after_ sync code
+    not limited to animation
+Python
+    asyncio.get_event_loop()
+    uvloop
+    https://docs.python.org/3/library/asyncio.html
+
+JavaScript
+    single threaded
+    synchronous, blocking
+    Engine (Microsoft chakra, Spidermonkey, V8)
+    the engine however is multi threaded
+    javascript: "illusion of multi threaded"
+    Node uses all of them
+    ---
+    call stack
+    event queue
+        piece of code that is waiting to run
+        also called a microtask
+        < image about event loop >        
+Callbacks
+    Run on Task queue
+        oldest variant
+        setTimeout "queue a task"
+            callback
+            Queue to run _on main loop_
+        one task executed
+    Callback hell
+"Promise"
+    who has never been to a fastfood restaurant?
+    "receipt with an order number"
+    representation of a future value
+    container around a value that eliminates time as a complexity
+    think of it as if you had the value already
+    it doesn't matter if they are not
+    let the framework deal with the complexity
+    trustable mechanism
+    thin wrapper around callbacks
+    look up definition of promise in standard
+    readfile.then().then(...).catch()...
+    Single catch at the end
+    Microtasks
+        whenever JS finishes executing
+        Promises
+        all microtasks executed (all of them)
+Await
+    for/while
+    try/catch
+    normal control flow
+    it's just Promises
+    we return a promise
+    await waits for it to be resolved
+
+requestAnimationFrame
+    another event loop?
+    happen as part of the render steps
+    all animation callbacks executed (at the time of triggering)
+
+Problem with Python and Node JS approaches
+    Event loop
+    Quite heavy
+    hard to work in embedded devices
+
+Rust futures
+    look up definition of future in standard
+    compare with js promise
+    type system makes it easier for refactoring
+    State machine
+    For a long time it was not even clear if it was even possible due to the typesystem
+    Fearless refactoring
+
+Pro tips
+    don't forget to await
